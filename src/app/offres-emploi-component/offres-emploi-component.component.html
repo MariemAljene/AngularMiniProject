@@ -1,0 +1,31 @@
+<input type="string" [(ngModel)]="search">
+
+<table border="2">
+  <tr>
+    <td>Reference</td>
+    <td>titre</td>
+    <td>Entreprise</td>
+
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let o of Emploi  " >
+   <div *ngIf="o.entreprise==search  ">
+      <td>{{o.reference}}</td>
+      <td>{{o.titre}}</td>
+      <td>{{o.entreprise}}</td>
+
+      <input type="submit" value="Postuler"  [disabled]="o.etat==false">
+    </div>
+  </tr>
+
+</table>
+
+<input type="submit" value="Bilan"  >
+
+{{total}}
+<div  *ngFor="let o of Emploi  ">
+  <div *ngIf="o.etat==false ">
+
+    {{ TotalEmploiNonCloture(total)}}
+  </div>
+</div>

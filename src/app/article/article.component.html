@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class="bootstrap table-striped">
+      <tr>
+        <th>Category Name</th>
+      </tr>
+      <tr *ngFor="let article of listeArticles">
+        <td>
+          <input type="submit"  (click)="filterByCategory(article.categorie)">{{ article.categorie }}>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

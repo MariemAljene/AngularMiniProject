@@ -1,0 +1,23 @@
+<input type="number" [(ngModel)]="search">
+<table border="2">
+  <tr>
+    <td>id</td>
+    <td>Title</td>
+    <td>Price</td>
+    <td>Quantity</td>
+    <td>Like</td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let p of Products let i=index" >
+   <div *ngIf="p.price<search || search==0">
+     <td>{{p.id}}</td>
+    <td>{{p.title}}</td>
+    <td>{{p.price}}</td>
+    <td>{{p.quantity}}</td>
+    <td>{{p.like}}</td>
+    <input type="submit" value="Buy" (click)="DecreaseQuantiy(i)" [disabled]="p.quantity==0">
+    <input type="submit" value="like" (click)="IncreaseLike(p)">
+   </div>
+  </tr>
+
+</table>

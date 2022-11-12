@@ -1,0 +1,23 @@
+<p>test works!</p>
+{{class}}
+ <div [style.background-color]="color" >
+msg
+ </div>
+
+<input type="text"[(ngModel)]="color">
+{{color}}
+
+<div *ngFor="let p of Products">
+
+  {{p.id}}
+  {{p.like}}
+  {{p.price}}
+  {{p.quantity}}
+  <div *ngIf="p.quantity==0">
+
+  <input type ="submit " value="buy">
+  </div>
+  <input type ="submit " value="buy" [disabled]="p.quantity==0" >
+  <input type ="submit " value="like">
+
+</div>
