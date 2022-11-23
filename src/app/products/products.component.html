@@ -21,3 +21,11 @@
   </tr>
 
 </table>
+<div *ngFor="let p of Products">
+  <div [ngStyle]="{'backgroundColor':p.quantity>0?'green':'red'}">
+    {{p.id}}
+    {{p.title}}
+    {{p.price}}
+    {{p.like}}
+  </div>
+</div>

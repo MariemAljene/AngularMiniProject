@@ -24,4 +24,8 @@ export class OffresEmploiComponentComponent implements OnInit {
     this.total++
 
   }
+  Postuler(i:any)
+  {
+    this.Emploi[i].etat==false
+  }
 }
